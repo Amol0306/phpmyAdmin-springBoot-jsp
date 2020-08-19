@@ -1,0 +1,24 @@
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class FormController {
+	
+	@Autowired
+	private FormRepository fr;
+	@PostMapping( "/register")
+	public void register(@RequestBody Form f)
+	{
+
+		fr.save(f);
+		
+		
+
+	}
+
+
+}
